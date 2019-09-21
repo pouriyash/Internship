@@ -1,0 +1,9 @@
+C:\Users\User\Source\Repos\Research.City\src\Infrastructure\Alamut.Service.Messaging\bin\Release\netstandard1.4\Alamut.Service.Messaging.deps.json
+C:\Users\User\Source\Repos\Research.City\src\Infrastructure\Alamut.Service.Messaging\bin\Release\netstandard1.4\Alamut.Service.Messaging.dll
+C:\Users\User\Source\Repos\Research.City\src\Infrastructure\Alamut.Service.Messaging\bin\Release\netstandard1.4\Alamut.Service.Messaging.pdb
+C:\Users\User\Source\Repos\Research.City\src\Infrastructure\Alamut.Service.Messaging\obj\Release\netstandard1.4\Alamut.Service.Messaging.csprojAssemblyReference.cache
+C:\Users\User\Source\Repos\Research.City\src\Infrastructure\Alamut.Service.Messaging\obj\Release\netstandard1.4\Alamut.Service.Messaging.csproj.CoreCompileInputs.cache
+C:\Users\User\Source\Repos\Research.City\src\Infrastructure\Alamut.Service.Messaging\obj\Release\netstandard1.4\Alamut.Service.Messaging.AssemblyInfoInputs.cache
+C:\Users\User\Source\Repos\Research.City\src\Infrastructure\Alamut.Service.Messaging\obj\Release\netstandard1.4\Alamut.Service.Messaging.AssemblyInfo.cs
+C:\Users\User\Source\Repos\Research.City\src\Infrastructure\Alamut.Service.Messaging\obj\Release\netstandard1.4\Alamut.Service.Messaging.dll
+C:\Users\User\Source\Repos\Research.City\src\Infrastructure\Alamut.Service.Messaging\obj\Release\netstandard1.4\Alamut.Service.Messaging.pdb

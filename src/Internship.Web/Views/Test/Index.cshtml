@@ -1,0 +1,103 @@
+﻿@using System.Collections.Generic
+@using Alamut.Data.Paging
+@using Internship.Core.DomainModels.SSOT
+@using Internship.Core.DomainModels.DTO.Routine2
+@using Internship.Core.DomainModels.DTO.Test
+@using Internship.Core.DomainModels.ViewModel.Test
+@using Microsoft.AspNetCore.Mvc.Rendering
+
+@{
+    ViewBag.Title = "روال تستی";
+
+}
+
+<style>
+    .no-aside #header {
+        position: fixed;
+    }
+
+    .content._page-scroll {
+        padding-top: 55px !important;
+    }
+</style>
+
+<div class="content _page-scroll animate-panel padding-0">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <!-- <p class="weight-500 size-14">به</p> -->
+            <img class="m-b-0" src="/static/dashboard-icons/33000.png">
+            <h1 class="text-primary size-25 weight-500 margin-bottom-8">
+                روال ثبت نام
+            </h1>
+            <!-- <p class="weight-500 size-14">خوش آمدید</p> -->
+        </div>
+    </div>
+
+    <div class="row m-t-sm grid-container-dashboard flex-height">
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 grid-item-container-dashboard" data-equalheight="box">
+            <div class="exirdashboard_Itemalign">
+                <div class="hpanel hviolet hgeneral hFolders">
+                    <div class="panel-body">
+                        <div class="stats__section">
+                            <div class="stats-title">
+                                <h4 class="size-16">کارتابل ثبت نام</h4>
+                            </div>
+                            <div class="stats-icon">
+                                <i class="pe-7s-news-paper fa-3x text-primary-2"></i>
+                            </div>
+                        </div>
+                        <div class="margin-top-10">
+                            <security-trimming asp-controller="Test" asp-action="Create">
+                                <a class="btn btn-block btn-outline btn-primary btn-lg size-14 weight-400 asp-controller="Test" asp-action="Create">ایجاد</a>
+
+                            </security-trimming>
+                            <security-trimming asp-controller="Test" asp-action="TestCustomer">
+                                <a class="btn btn-block btn-outline btn-primary btn-lg size-14 weight-400 asp-controller="Test" asp-action="TestCustomer">کارتابل کارشناس دفتر استانی</a>
+
+                            </security-trimming>
+                            <security-trimming asp-controller="Test" asp-action="TestManager">
+                                <a class="btn btn-block btn-outline btn-info btn-lg size-14 weight-400 asp-controller="Test" asp-action="TestManager">کارتابل رئیس کمیته معارف استان</a>
+                            </security-trimming>
+                            <security-trimming asp-area="" asp-controller="Test" asp-action="TestscienceCommitee">
+                                <a class="btn btn-block btn-outline btn-info btn-lg size-14 weight-400 asp-controller="Test" asp-action="TestscienceCommitee">کارتابل اداره جذب</a>
+                            </security-trimming>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 grid-item-container-dashboard" data-equalheight="box">
+            <div class="exirdashboard_Itemalign">
+
+
+                <div class="hpanel hred hgeneral hManagement">
+                    <div class="panel-body">
+                        <div class="stats__section">
+                            <div class="stats-title">
+                                <h4 class="size-16">امکانات مدیریتی</h4>
+                            </div>
+                            <div class="stats-icon">
+                                <i class="pe-7s-shuffle fa-3x text-danger"></i>
+                            </div>
+                        </div>
+                        <div class="margin-top-10">
+                            <div class="list__group">
+
+                                <a class="list__group__item text-danger" asp-controller="Test" asp-action="Index">
+                                    <h5 class="list__group__title"><i class="fa fa-sliders size-18 margin-left-3"></i> امکانات مدیریتی</h5>
+                                </a>
+
+                                @*@await Component.InvokeAsync("PageLinks", new { ControllerName = "RegisterModule", registerModuleType = ViewBag.type })*@
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

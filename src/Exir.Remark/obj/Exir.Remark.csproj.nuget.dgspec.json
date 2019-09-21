@@ -1,0 +1,64 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Repose\\internship13980630\\Internship\\src\\Exir.Remark\\Exir.Remark.csproj": {}
+  },
+  "projects": {
+    "D:\\Repose\\internship13980630\\Internship\\src\\Exir.Remark\\Exir.Remark.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Repose\\internship13980630\\Internship\\src\\Exir.Remark\\Exir.Remark.csproj",
+        "projectName": "Exir.Remark",
+        "projectPath": "D:\\Repose\\internship13980630\\Internship\\src\\Exir.Remark\\Exir.Remark.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "D:\\Repose\\internship13980630\\Internship\\src\\Exir.Remark\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp1.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp1.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp1.1": {
+          "dependencies": {
+            "Alamut.Helpers": {
+              "target": "Package",
+              "version": "[3.0.1, )"
+            },
+            "DNTPersianUtils.Core": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.ViewFeatures": {
+              "target": "Package",
+              "version": "[1.1.3, )"
+            },
+            "Microsoft.NETCore.App": {
+              "target": "Package",
+              "version": "[1.1.2, )",
+              "autoReferenced": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+E:\GitHub\ExirResearchco\Nahad\lib\Exir.Regate\bin\Release\netcoreapp1.1\Exir.Regate.deps.json
+E:\GitHub\ExirResearchco\Nahad\lib\Exir.Regate\bin\Release\netcoreapp1.1\Exir.Regate.dll
+E:\GitHub\ExirResearchco\Nahad\lib\Exir.Regate\bin\Release\netcoreapp1.1\Exir.Regate.pdb
+E:\GitHub\ExirResearchco\Nahad\lib\Exir.Regate\bin\Release\netcoreapp1.1\Exir.Remark.dll
+E:\GitHub\ExirResearchco\Nahad\lib\Exir.Regate\bin\Release\netcoreapp1.1\Exir.Remark.pdb
+E:\GitHub\ExirResearchco\Nahad\lib\Exir.Regate\obj\Release\netcoreapp1.1\Exir.Regate.csprojAssemblyReference.cache
+E:\GitHub\ExirResearchco\Nahad\lib\Exir.Regate\obj\Release\netcoreapp1.1\Exir.Regate.csproj.CoreCompileInputs.cache
+E:\GitHub\ExirResearchco\Nahad\lib\Exir.Regate\obj\Release\netcoreapp1.1\Exir.Regate.AssemblyInfoInputs.cache
+E:\GitHub\ExirResearchco\Nahad\lib\Exir.Regate\obj\Release\netcoreapp1.1\Exir.Regate.AssemblyInfo.cs
+E:\GitHub\ExirResearchco\Nahad\lib\Exir.Regate\obj\Release\netcoreapp1.1\Exir.Regate.csproj.CopyComplete
+E:\GitHub\ExirResearchco\Nahad\lib\Exir.Regate\obj\Release\netcoreapp1.1\Exir.Regate.dll
+E:\GitHub\ExirResearchco\Nahad\lib\Exir.Regate\obj\Release\netcoreapp1.1\Exir.Regate.pdb

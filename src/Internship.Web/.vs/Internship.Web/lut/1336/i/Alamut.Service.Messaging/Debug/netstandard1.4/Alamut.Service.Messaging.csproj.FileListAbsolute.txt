@@ -1,0 +1,8 @@
+I:\02\NewInternship\Internship.Web\.vs\Internship.Web\lut\0\b\Alamut.Service.Messaging\Debug\netstandard1.4\Alamut.Service.Messaging.deps.json
+I:\02\NewInternship\Internship.Web\.vs\Internship.Web\lut\0\b\Alamut.Service.Messaging\Debug\netstandard1.4\Alamut.Service.Messaging.dll
+I:\02\NewInternship\Internship.Web\.vs\Internship.Web\lut\0\i\Alamut.Service.Messaging\Debug\netstandard1.4\Alamut.Service.Messaging.csprojAssemblyReference.cache
+I:\02\NewInternship\Internship.Web\.vs\Internship.Web\lut\0\i\Alamut.Service.Messaging\Debug\netstandard1.4\Alamut.Service.Messaging.csproj.CoreCompileInputs.cache
+I:\02\NewInternship\Internship.Web\.vs\Internship.Web\lut\0\i\Alamut.Service.Messaging\Debug\netstandard1.4\Alamut.Service.Messaging.AssemblyInfoInputs.cache
+I:\02\NewInternship\Internship.Web\.vs\Internship.Web\lut\0\i\Alamut.Service.Messaging\Debug\netstandard1.4\Alamut.Service.Messaging.AssemblyInfo.cs
+I:\02\NewInternship\Internship.Web\.vs\Internship.Web\lut\0\i\Alamut.Service.Messaging\Debug\netstandard1.4\Alamut.Service.Messaging.csproj.CopyComplete
+I:\02\NewInternship\Internship.Web\.vs\Internship.Web\lut\0\i\Alamut.Service.Messaging\Debug\netstandard1.4\Alamut.Service.Messaging.dll

@@ -1,0 +1,1385 @@
+﻿@{
+    var pageTitle = ViewData["Title"] ?? "ASP.NET Core Identity Sample";
+}
+@using Internship.Core.DomainModels.SSOT
+@using Microsoft.AspNetCore.Mvc.Rendering
+@using  Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor _context
+@*@inject ContactInfo ContactInfo*@
+@*@inject FileConfig FileConfig*@
+@inject IOptions<ContactInfo> ContactInfo
+@inject IOptionsSnapshot<FileConfig> FileConfig
+@inject IOptionsSnapshot<ContactInfo> ContactInfo
+
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+    @*<meta charset="utf-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>@pageTitle</title>
+        <link href="~/css/site.min.css" rel="stylesheet" asp-append-version="true" />*@
+
+
+
+    @* اضافه شده توسط مبشر *@
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11">
+    <meta name="robots" content="noindex,nofollow, noarchive, nosnippet, noodp, noydir" />
+
+    <title>@ViewBag.Title</title>
+
+    <link rel="apple-touch-icon" sizes="152x152" href="~/theme/assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="~/theme/assets/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="~/theme/assets/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="~/theme/assets/favicons/manifest.json">
+    <link rel="mask-icon" href="~/theme/assets/favicons/safari-pinned-tab.svg" color="#d10a01">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Vendor styles -->
+    <link rel="stylesheet" href="~/theme/assets/vendor/fontawesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="~/theme/assets/vendor/metisMenu/dist/metisMenu.rtl.css" />
+    <link rel="stylesheet" href="~/theme/assets/vendor/animate.css/animate.css" />
+
+    <!-- App styles -->
+    <link rel="stylesheet" href="~/theme/assets/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css" />
+    <link rel="stylesheet" href="~/theme/assets/fonts/pe-icon-7-stroke/css/helper.css" />
+
+    <!-- App styles RTL -->
+    <link rel="stylesheet" href="~/theme/assets/vendor/bootstrap/dist/css/bootstrap.rtl.css" />
+    <link rel="stylesheet" href="~/theme/assets/styles/style.rtl.css?v1.2.0">
+    <link rel="stylesheet" href="~/theme/assets/styles/styles.css?v1.2.4">
+    <link rel="stylesheet" href="~/theme/assets/styles/style-overwrite.rtl.css?v1.8.2" />
+    <link rel="stylesheet" href="~/theme/assets/styles/font-fa.css?v1.4.1">
+
+
+    <script src="~/theme/assets/vendor/jquery/dist/jquery.min.js"></script>
+
+    <script src="~/lib/lodash/dist/lodash.min.js"></script>
+    <script src="~/js/site.min.js" type="text/javascript" asp-append-version="true"></script>
+
+    <!-- webui popover -->
+    <link href="~/lib/webui-popover-2.1.15/dist/jquery.webui-popover.min.css" rel="stylesheet" />
+    <script src="~/lib/webui-popover-2.1.15/dist/jquery.webui-popover.min.js"></script>
+
+    <!-- fancybox -->
+    @*<link href="~/lib/fancybox-3.0.47/dist/jquery.fancybox.min.css" rel="stylesheet" />*@
+    @*<script src="~/lib/fancybox-3.0.47/dist/jquery.fancybox.min.js"></script>*@
+    <script src="~/lib/fancybox-2.1.5/source/jquery.fancybox.js"></script>
+    <link href="~/lib/fancybox-2.1.5/source/jquery.fancybox.css" rel="stylesheet" />
+
+    <!-- select2 -->
+    <link href="~/lib/select2-4.0.3/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="~/lib/select2-4.0.3/dist/css/select2-bootstrap.min.css" rel="stylesheet" />
+    <script src="~/lib/select2-4.0.3/dist/js/select2.full.min.js"></script>
+
+    <script src="~/lib/matchHeight-0.7.2/dist/jquery.matchHeight-min.js?v0.7.2"></script>
+
+    <script src="~/lib/vue/vue.min.js"></script>
+
+    <link href="~/lib/sweetalert/dist/sweetalert.css" rel="stylesheet" />
+    <script src="~/lib/sweetalert/dist/sweetalert.min.js"></script>
+
+    <link href="~/lib/amib-calendar/js-persian-cal.css" rel="stylesheet" />
+    <script src="~/lib/jalaali/jalali.js"></script>
+
+    <script src="~/lib/amib-calendar/js-persian-cal.min.js"></script>
+
+    <script src="~/lib/jalaaliJsCalendar/calendar.js"></script>
+    <script src="~/lib/jalaaliJsCalendar/calendar-setup.js"></script>
+    <script src="~/lib/jalaaliJsCalendar/lang/calendar-fa.js"></script>
+
+    <link href="~/lib/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css" rel="stylesheet" />
+    <script src="~/lib/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <!-- Vendor scripts -->
+    <script src="~/theme/assets/vendor/jquery-ui/jquery-ui.min.js"></script>
+    <script src="~/theme/assets/vendor/slimScroll/jquery.slimscroll.min.js"></script>
+    <script src="~/theme/assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/theme/assets/vendor/jquery-flot/jquery.flot.js"></script>
+    <script src="~/theme/assets/vendor/jquery-flot/jquery.flot.resize.js"></script>
+    <script src="~/theme/assets/vendor/jquery-flot/jquery.flot.pie.js"></script>
+    <script src="~/theme/assets/vendor/flot.curvedlines/curvedLines.js"></script>
+    <script src="~/theme/assets/vendor/jquery.flot.spline/index.js"></script>
+    <script src="~/theme/assets/vendor/metisMenu/dist/metisMenu.min.js"></script>
+    <script src="~/theme/assets/vendor/iCheck/icheck.min.js"></script>
+    <script src="~/theme/assets/vendor/peity/jquery.peity.min.js"></script>
+    <script src="~/theme/assets/scripts/jquery.matchHeight.js?v0.7.2"></script>
+    <script src="~/theme/assets/vendor/sparkline/index.js"></script>
+
+
+    <script>
+
+
+
+
+        //  ajax
+        // به صورت معمولی
+        function ajaxCall(url, params, type, successCallback) {
+
+
+            // نمایش لودینگ
+            $('.loading').removeClass('hide');
+
+
+
+
+            timeOut = 6000;
+
+            if (type == null)
+                type = "POST";
+
+            type = (type.toUpperCase() != "GET" &&
+                type.toUpperCase() != "POST" &&
+                type.toUpperCase() != "PUT" &&
+                type.toUpperCase() != "DELETE") ? "POST" : type;
+
+
+            $.ajax({
+                type: type,
+                url: url,
+                async: false,
+                data: params,
+
+                //contentType: 'application/json;',
+                //dataType: 'json',
+                success: successCallback,
+                error: function (xhr, textStatus, errorThrown) {
+                    console.log(xhr.status);
+                    // درصورتی که کوکی شخص پریده باشد باید به صفحه لاگین هدایت شود
+                    // درصورتی که شماره status برابر 401 باشد باید به صفحه لاگین هدایت شود
+                    if (xhr.status == 401)
+                        window.location.href = "/";
+
+                    // درصورتی که کاربر به این اکشن دسترسی نداشته باشد
+                    if (xhr.status == 403) {
+                        $("[name='NoAccess']").removeClass("hide");
+                        $('#target_').html('');
+                    }
+                }
+            });
+
+            // پنهان کردن لودینگ
+            $('.loading').addClass('hide');
+        }
+
+        function ajaxCallWithCondistion(url, params, type, successCallback) {
+
+            // نمایش لودینگ
+            $('.loading').removeClass('hide');
+
+            timeOut = 6000;
+
+            if (type == null)
+                type = "POST";
+
+            type = (type.toUpperCase() != "GET" &&
+                type.toUpperCase() != "POST" &&
+                type.toUpperCase() != "PUT" &&
+                type.toUpperCase() != "DELETE") ? "POST" : type;
+
+
+            $.ajax({
+                type: type,
+                url: url,
+                async: false,
+                data: params,
+                processData: false,
+                contentType: false,
+                success: successCallback,
+                error: function (xhr, textStatus, errorThrown) {
+                    console.log(xhr.status);
+                    // درصورتی که کوکی شخص پریده باشد باید به صفحه لاگین هدایت شود
+                    // درصورتی که شماره status برابر 401 باشد باید به صفحه لاگین هدایت شود
+                    if (xhr.status == 401)
+                        window.location.href = "/";
+
+                    if (xhr.status == 403) {
+                        $("[name='NoAccess']").removeClass("hide");
+                        $('#target_').html('');
+                    }
+                }
+            });
+
+            // پنهان کردن لودینگ
+            $('.loading').addClass('hide');
+        }
+
+        /*
+         * از این تابع کلا برای زمانی که بخواهیم کلا
+         * یا فرمو به سمت سرور بفرستیم و یا کلا در داخل صفحه فایل آپلود داشته باشیم استفاده می کنیم
+         */
+        function ajaxCallWithUploadFile(url, params, type, successCallback) {
+            // نمایش لودینگ
+            $('.loading').removeClass('hide');
+
+            timeOut = 6000;
+
+            if (type == null)
+                type = "POST";
+
+            type = (type.toUpperCase() != "GET" &&
+                type.toUpperCase() != "POST" &&
+                type.toUpperCase() != "PUT" &&
+                type.toUpperCase() != "DELETE") ? "POST" : type;
+
+            debugger;
+            $.ajax({
+                type: type,
+                url: url,
+                async: false,
+                data: params,
+                cache: false,
+                contentType: false,
+                processData: false,
+
+                success: successCallback,
+                error: function (xhr, textStatus, errorThrown) {
+                    console.log(xhr.status);
+                    // درصورتی که کوکی شخص پریده باشد باید به صفحه لاگین هدایت شود
+                    // درصورتی که شماره status برابر 401 باشد باید به صفحه لاگین هدایت شود
+                    if (xhr.status == 401)
+                        window.location.href = "/";
+
+                    if (xhr.status == 403) {
+                        $("[name='NoAccess']").removeClass("hide");
+                        $('#target_').html('');
+                    }
+                }
+            });
+
+            // پنهان کردن لودینگ
+            $('.loading').addClass('hide');
+        }
+    </script>
+
+    @* ======================================== *@
+    @Html.Partial("_ViewMode")
+    @*  @Html.Partial("_FancyboxPopup")*@
+    @* ======================================== *@
+
+
+    @*<link href="~/theme/assets/styles/dark-style.css" rel="stylesheet" />*@
+
+
+    <style>
+
+        .inputSearch {
+            height: 35px;
+            width: 100% !important;
+            border: 1px solid #DDD;
+            border-radius: 5px;
+        }
+
+        .selectSearch {
+            height: 35px;
+            width: 100% !important;
+            border: 1px solid #DDD;
+            border-radius: 4px;
+        }
+    </style>
+
+    <style>
+        .AAA_select2-container {
+            z-index: 999999;
+        }
+
+        .select2-container--default[dir="rtl"] .select2-selection--single .select2-selection__clear {
+            margin-top: 2px;
+            font-size: 20px;
+            color: #777;
+        }
+
+        .select2-container[dir="rtl"] .select2-selection--single .select2-selection__rendered {
+            text-align: right;
+            line-height: 32px;
+        }
+
+        .fancybox-lock {
+            overflow-y: scroll !important;
+        }
+
+        html {
+            overflow-y: scroll !important;
+        }
+
+        .fancybox-margin {
+            margin-right: 0 !important;
+        }
+
+        .official-letter-container {
+            margin: 30px auto;
+            background: white;
+            padding: 25px 15px;
+            /*border: 2px solid black;*/
+            text-align: justify;
+        }
+
+        .official-letter-body h1 {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .official-letter-body h2 {
+            font-size: 16px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        [contenteditable] {
+            outline: 0 none;
+        }
+
+        .dnone {
+            display: none;
+        }
+    </style>
+
+
+
+
+    <script>
+        function PopupCenter(url, title, w, h) {
+            // Fixes dual-screen position                         Most browsers      Firefox
+            var dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : screen.left;
+            var dualScreenTop = window.screenTop != undefined ? window.screenTop : screen.top;
+
+            var width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
+            var height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
+
+            var left = ((width / 2) - (w / 2)) + dualScreenLeft;
+            var top = ((height / 2) - (h / 2)) + dualScreenTop;
+            var newWindow = window.open(url, title, 'scrollbars=yes, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+
+            // Puts focus on the newWindow
+            if (window.focus) {
+                newWindow.focus();
+            }
+
+            return false;
+        }
+    </script>
+
+    <script>
+        function removeDefaultRoutineButtonCancel(id) {
+            $('#routine_record_action_Cancel_' + id).css({
+                position: 'absolute',
+                zIndex: -1,
+                width: 0,
+                height: 0,
+                overflow: 'hidden',
+                pointerEvents: 'none'
+            });
+        }
+
+        function routineSubmitCancel(id, description) {
+            console.group('routineSubmitCancel');
+            console.log('do the cancel action for id : ' + id);
+            var $container = $('#Routine_Action_Cancel_' + id);
+
+            if ($container.length === 0) {
+                console.log('there is no routine cancel button for id : ' + id);
+                console.log('maybe we are in popup, searching parent');
+                $container = window.parent.$('#Routine_Action_Cancel_' + id);
+
+                if ($container.length === 0) {
+                    console.log('nothing found, maybe you missed something, check the routine step and its type');
+                }
+            }
+
+            $container.find('form [name="Description"]').val(description);
+            $container.find('form').submit();
+            closeFancybox();
+            console.groupEnd();
+        }
+
+        function removeDefaultRoutineButtonEdit(id) {
+            $('#routine_record_action_Edit_' + id).css({
+                position: 'absolute',
+                zIndex: -1,
+                width: 0,
+                height: 0,
+                overflow: 'hidden',
+                pointerEvents: 'none'
+            });
+        }
+
+        function routineSubmitEdit(id, description) {
+            console.group('routineSubmitEdit');
+            console.log('do the edit action for id : ' + id);
+            var $container = $('#Routine_Action_Edit_' + id);
+
+            if ($container.length === 0) {
+                console.log('there is no routine edit button for id : ' + id);
+                console.log('maybe we are in popup, searching parent');
+                $container = window.parent.$('#Routine_Action_Edit_' + id);
+
+                if ($container.length === 0) {
+                    console.log('nothing found, maybe you missed something, check the routine step and its type');
+                }
+            }
+
+            $container.find('form [name="Description"]').val(description);
+            $container.find('form').submit();
+            closeFancybox();
+            console.groupEnd();
+        }
+
+        function removeDefaultRoutineButtonNext(id) {
+            $('#routine_record_action_Next_' + id).css({
+                position: 'absolute',
+                zIndex: -1,
+                width: 0,
+                height: 0,
+                overflow: 'hidden',
+                pointerEvents: 'none'
+            });
+        }
+
+        function routineSubmitNext(id, description) {
+            console.group('routineSubmitNext');
+            console.log('do the cancel next for id : ' + id);
+            var $container = $('#Routine_Action_Next_' + id);
+
+            if ($container.length === 0) {
+                console.log('there is no routine next button for id : ' + id);
+                console.log('maybe we are in popup, searching parent');
+                $container = window.parent.$('#Routine_Action_Next_' + id);
+
+                if ($container.length === 0) {
+                    console.log('nothing found, maybe you missed something, check the routine step and its type');
+                }
+            }
+
+            $container.find('form [name="Description"]').val(description);
+            $container.find('form').submit();
+            closeFancybox();
+            console.groupEnd();
+        }
+
+        function removeDefaultRoutineButtonOk(id) {
+            $('#routine_record_action_Ok_' + id).css({
+                position: 'absolute',
+                zIndex: -1,
+                width: 0,
+                height: 0,
+                overflow: 'hidden',
+                pointerEvents: 'none'
+            });
+        }
+
+        function routineSubmitOk(id, description) {
+            console.group('routineSubmitOk');
+            console.log('do the ok action for id : ' + id);
+            var $container = $('#Routine_Action_Ok_' + id);
+
+            if ($container.length === 0) {
+                console.log('there is no routine ok button for id : ' + id);
+                console.log('maybe we are in popup, searching parent');
+                $container = window.parent.$('#Routine_Action_Ok_' + id);
+
+                if ($container.length === 0) {
+                    console.log('nothing found, maybe you missed something, check the routine step and its type');
+                }
+            }
+
+            $container.find('form [name="Description"]').val(description);
+            $container.find('form').submit();
+            closeFancybox();
+            console.groupEnd();
+        }
+
+        function getRecordApp(id) {
+            return window['app_record'][id];
+        }
+
+        function closeFancybox() {
+            console.group('closing fancybox');
+            try {
+                console.log('trying to close fancybox in main window and parent');
+                $.fancybox.close(true);
+                window.parent.$.fancybox.close(true);
+            } catch (e) {
+                console.log('something went wrong');
+                console.error(e);
+            }
+            console.groupEnd();
+        }
+
+        function closeFancyboxOneLevel() {
+            console.group('closing fancybox');
+            try {
+                console.log('trying to close fancybox in main window --one level');
+                $.fancybox.close(true);
+            } catch (e) {
+                console.log('something went wrong');
+                console.error(e);
+            }
+            console.groupEnd();
+        }
+
+        function closeFancyboxAndShowServiceResult(serviceResult) {
+            closeFancybox();
+            console.log(serviceResult);
+            showBeautyMessage(serviceResult);
+        }
+
+        function showBeautyMessage(res) {
+            res = res || {};
+
+            swal({
+                title: (res.Succeed ? 'موفق' : 'خطا'),
+                text: res.Message || (res.Succeed ? 'عملیات با موفقیت انجام شد' : "عملیات با خطا مواجه شد"),
+                type: res.Succeed ? "success" : "error",
+                confirmButtonText: "تایید",
+                html: true
+            });
+        }
+    </script>
+
+
+    <script>
+        $(function () {
+            $('body').on('click', '.webui-popover-content select, .sweet-alert', function () {
+                return false;
+            });
+        });
+    </script>
+
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+
+        .webui-popover {
+            text-align: right;
+        }
+
+        .webui-popover-content {
+            min-width: 300px;
+        }
+
+        [data-role="popover-content"] {
+            display: none;
+        }
+
+        .btn {
+            font-size: inherit;
+            outline: 0 none !important;
+        }
+
+        a, i {
+            outline: 0 none !important;
+        }
+
+        .exirdashboard {
+            min-height: calc(100vh - 102px);
+        }
+
+        .largeicon {
+            font-size: 36px;
+        }
+
+        .exir--transparent-btn {
+            border: 0 none !important;
+            padding: 0 !important;
+            background: transparent !important;
+            outline: 0 none !important;
+        }
+
+        .tooltip {
+            font-family: inherit;
+            min-width: 60px;
+        }
+
+        .hpanel--fullheight .panel-body {
+            position: relative;
+            min-height: calc(100vh - 260px);
+        }
+    </style>
+
+    <script>
+        $(function () {
+            $('[data-popover]').each(function () {
+                var $elem = $(this);
+                var id = $elem.attr('data-popover');
+                $elem.webuiPopover({ url: '#' + id });
+            });
+        });
+    </script>
+
+    <script>
+        function refreshEqualHeightBox() {
+            $.fn.matchHeight._update();
+        }
+    </script>
+
+    <script>
+        function closeAndRefresh() {
+            closeFancybox();
+            $('#wrapper').css('opacity', 0.3);
+            $('#wrapper').css('pointer-events', 'none');
+            $('[data-popover]').webuiPopover('hide');
+            setTimeout(function () {
+                window.location.reload();
+            }, 500);
+        }
+
+        function closeAndRedirect(url) {
+            closeFancybox();
+            $('#wrapper').css('opacity', 0.3);
+            $('#wrapper').css('pointer-events', 'none');
+            $('[data-popover]').webuiPopover('hide');
+            setTimeout(function () {
+                window.location.href = url;
+            }, 0);
+        }
+
+        function closeAndRefreshOneLevel() {
+            closeFancyboxOneLevel();
+            $('#wrapper').css('opacity', 0.3);
+            $('#wrapper').css('pointer-events', 'none');
+            $('[data-popover]').webuiPopover('hide');
+            setTimeout(function () {
+                window.location.reload();
+            }, 500);
+        }
+
+        function closeAndRedirectOneLevel() {
+            closeFancyboxOneLevel();
+            $('#wrapper').css('opacity', 0.3);
+            $('#wrapper').css('pointer-events', 'none');
+            $('[data-popover]').webuiPopover('hide');
+            setTimeout(function () {
+                window.location.href = url;
+            }, 0);
+        }
+    </script>
+
+    <script>
+        $(function () {
+            var allGroups = [];
+            var $elems = $('[data-equalheight]');
+            $elems.each(function () {
+                var $elem = $(this);
+                var name = $elem.attr('data-equalheight');
+                if ($.inArray(name, allGroups) === -1) {
+                    allGroups.push(name);
+                }
+            });
+
+            allGroups.forEach(function (group) {
+                $elems.filter('[data-equalheight="' + group + '"]').matchHeight();
+            });
+
+            // confirm
+            $('form[data-role="confirm"]').on('submit', function () {
+                return confirm('آیا مطمئن هستید؟');
+            });
+
+            $('a[data-role="confirm"]').on('click', function () {
+                return confirm('آیا مطمئن هستید؟');
+            });
+
+            // open the first panel in repeater
+            setTimeout(function () {
+                $('[data-role="hpanel-as-repeater"]').eq(0).find('.showhide').click();
+            }, 0);
+        });
+    </script>
+
+    <script>
+        window.selectCurrentTab = function (tab) {
+            $('[data-role="PageTabContainer"] [data-tab-role="' + tab + '"]').toggleClass('btn-default btn-primary');
+        };
+    </script>
+
+    <script>
+            window.__Configuration = {};
+            window.__Configuration['RepositoryUrl'] = '@FileConfig.Value.WebAddress';
+            window.__CurrentModule = '@ViewContext.RouteData.Values["controller"].ToString()';
+    </script>
+
+
+    <style>
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 999999;
+            background: white;
+        }
+
+        body.state--loaded::after {
+            display: none;
+        }
+    </style>
+
+    <script>
+        $(function () {
+            $('body').addClass('state--loaded');
+        });
+    </script>
+
+    <script>
+        var Routine2 = {};
+
+        Routine2.RemoveButton = function (entityId, action) {
+            console.log(entityId, action);
+            $('#routine_record_action_tooltip_' + action + '_' + entityId).css({
+                position: 'absolute',
+                zIndex: -1,
+                width: 0,
+                height: 0,
+                overflow: 'hidden',
+                pointerEvents: 'none'
+            });
+        };
+
+        Routine2.DoAction = function (id, action, description) {
+            debugger;
+            console.group('routineSubmitOk');
+            console.log('do the ok action for id : ' + id);
+            var $container = $('#Routine_Action_' + action + '_' + id);
+
+            console.log($container);
+
+            if ($container.length === 0) {
+                console.log('there is no routine ok button for id : ' + id);
+                console.log('maybe we are in popup, searching parent');
+                $container = window.parent.$('#Routine_Action_' + action + '_' + id);
+
+                if ($container.length === 0) {
+                    console.log('nothing found, maybe you missed something, check the routine step and its type');
+                }
+            }
+
+            $container.find('form [name="Description"]').val(description);
+            $container.find('form').submit();
+            closeFancybox();
+            console.groupEnd();
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+</head>
+<body class="fixed-navbar sidebar-scroll">
+
+
+    <style>
+
+        .cursor-pointer {
+            cursor: pointer;
+        }
+
+        #loader-anim {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            z-index: 1;
+            margin: -75px 0 0 -75px;
+            border: 12px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 12px solid #3498db;
+            width: 110px;
+            height: 110px;
+            -webkit-animation: spin 2s linear infinite;
+            animation: spin 2s linear infinite;
+        }
+
+
+        @@-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @@keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @@-webkit-keyframes animatebottom {
+            from {
+                bottom: -100px;
+                opacity: 0
+            }
+
+            to {
+                bottom: 0px;
+                opacity: 1
+            }
+        }
+
+        @@keyframes animatebottom {
+            from {
+                bottom: -100px;
+                opacity: 0
+            }
+
+            to {
+                bottom: 0;
+                opacity: 1
+            }
+        }
+
+        .loading {
+            background-color: rgba(0, 0, 0, 0.82) !important;
+            width: 100% !important;
+            height: 100% !important;
+            z-index: 1000000000000000000000;
+            position: absolute;
+        }
+    </style>
+
+
+    <script type="text/javascript">
+
+        $(function () {
+
+            $(document).on('keyup', '.txtSearchErea', function (event) {
+                var keycode = (event.keyCode ? event.keyCode : (event.which ? event.which : event.charCode));
+                // درصورتی که اینتر شده باشد
+                if (keycode == 13) {
+                    $('.btn-search').trigger("click");
+                }
+            });
+
+
+            $(document).on('change', '.ddlSearchErea', function () {
+                $('.btn-search').trigger("click");
+            });
+
+        });
+
+
+
+
+
+    </script>
+
+    <div class="loading hide">
+        <div id="loader-anim">
+        </div>
+        <div style="color:#FFF; font-size:16px;position: absolute;left: 45%;
+            top: 56%;">
+            لطفا صبر کند ...
+        </div>
+    </div>
+
+    <!-- Header -->
+    <div id="header">
+        <div class="color-line">
+        </div>
+        <div id="logo" class="light-version weight-500">
+            <a asp-controller="Home" asp-action="Index">
+                @ContactInfo.Value.SiteSlogan
+            </a>
+
+        </div>
+        <nav role="navigation">
+            <div class="header-link hide-menu homer-side-toggler" data-toggle="tooltip" data-placement="bottom" title="منو"><i class="fa fa-bars"></i></div>
+
+            <div class="small-logo">
+                <span class="text-primary">@ContactInfo.Value.SiteSlogan</span>
+            </div>
+
+            <form role="search" class="navbar-form-custom" method="post" action="#" style="">
+                <div class="form-group">
+                    <input type="text" placeholder="جستجو در داشبورد ..." class="form-control" data-search-item=".social-profile .media-body h4, .social-profile .media-body small, .panel-footer .list-group .list-group-item .dashboard_list_item" data-search-input="dashboard">
+                </div>
+            </form>
+
+            <div class="mobile-menu">
+                <a href="/Account/Logout" type="button" class="navbar-toggle mobile-menu-toggle no-margins margin-top-3 margin-left-3" data-toggle="collapse" data-target="#mobile-collapse">
+                    <i class="pe-7s-upload pe-rotate-90 size-30"></i>
+                </a>
+
+            </div>
+            <div class="navbar-right">
+                <ul class="nav navbar-nav no-borders">
+
+                    <li class="dropdown">
+                        <a href="/" data-toggle="tooltip" data-placement="bottom" title="صفحه‌اصلی">
+                            <i class="pe-7s-keypad"></i>
+                        </a>
+                    </li>
+
+                    <li class="dropdown">
+                        <a asp-area="Identity" asp-controller="Login" asp-action="LogOff" data-toggle="tooltip" data-placement="bottom" title="خروج">
+                            <i class="pe-7s-upload pe-rotate-90"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+
+    <!-- Navigation -->
+    <aside id="menu">
+        <div id="navigation">
+            <div class="profile-picture">
+                <a asp-controller="Home" asp-action="Index">
+                    <div class="img-siteLogo" style="background-image: url('@ContactInfo.Value.Logo')"></div>
+                    <pre class="geekLogo">
+ ________   _______ _____  
+|  ____\ \ / /_   _|  __ \ 
+| |__   \ V /  | | | |__) |
+|  __|   > <   | | |  _  / 
+| |____ / . \ _| |_| | \ \ 
+|______/_/ \_\_____|_|  \_\</pre>
+                </a>
+
+                <div class="stats-label text-color">
+                    <a href="@ContactInfo.Value.SiteTitleLink" target="_blank" class="exirdashboard_titlenav size-14 line-height-20">
+                        @ContactInfo.Value.SiteTitle
+                    </a>
+
+
+
+                    <h3 class="margin-bottom-0 size-20 weight-500 line-height-30">@ContactInfo.Value.SiteSlogan</h3>
+
+                    <div class="dropdown exirdashboard_titlebrand">
+                        <a class="dropdown-toggle" asp-controller="Home" asp-action="Index" data-toggle="dropdown">
+                            <span class="text-muted">@ContactInfo.Value.SiteDescription</span>
+
+
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="exirdashboard_user">
+                <i class="fa fa-user"></i>
+            </div>
+            <div class="exirdashboard_info">
+                کاربر محترم
+                <br />
+                <span style="color: #62cb31; font-weight: bold; line-height: 2em;">@_context.HttpContext.User.Identity.GetUserName()</span>
+                <br />
+                خوش آمدید.
+            </div>
+
+            <hr />
+
+            @Html.Partial("_Clock")
+
+
+        </div>
+    </aside>
+
+    <!-- Main Wrapper -->
+    <div id="wrapper">
+        <script>
+            $('.numberTestDot').on('keypress', function () {
+                console.log($('.numberTestDot').val())
+            })
+        </script>
+
+        @Html.Partial("_Breadcrumb")
+
+        <div class="content">
+            <div class="row">
+
+                @Html.Partial("_Message")
+
+                @RenderBody()
+
+            </div>
+        </div>
+
+
+
+        <!-- Footer-->
+        <footer class="footer">
+            @*<span class="pull-left">
+                    کلیه حقوق این سامانه متعلق به <strong><a href="@ContactInfo.SiteTitleLink" target="_blank"> @ContactInfo.SiteTitle </a></strong> است.
+                </span>*@
+
+            <span class="pull-left">
+                کلیه حقوق این سامانه متعلق به <strong><a href="" target="_blank"> اکسیر </a></strong> است.
+            </span>
+            <span class="pull-right">
+                طراحی و توسعه: <a href="http://www.exirresearch.ir/" target="_blank">فناوری دانش و پژوهش اکسیر</a>
+            </span>
+        </footer>
+
+    </div>
+
+
+    <div class="clear"></div>
+    <!-- /Main Wrapper -->
+    <!-- App scripts -->
+    <script src="~/theme/assets/scripts/homer.js"></script>
+    <script src="~/theme/assets/scripts/charts.js"></script>
+
+    <!-- Highcharts -->
+    <script src="~/lib/Highcharts-6.1.4/highcharts.js"></script>
+    <script src="~/lib/highcharts-6.1.4/exporting.js"></script>
+
+    <script>
+        $('.exirdashboard_Itemalign').matchHeight();
+    </script>
+
+    <script src="~/UI/UserId.js"></script>
+    <script src="~/UI/AcademicRankId.js"></script>
+    <script src="~/UI/UniversityId.js"></script>
+    <script src="~/UI/ForeignKey.js"></script>
+    <script src="~/UI/StepId.js"></script>
+    <script src="~/UI/RoutineInitializer.js"></script>
+    <script src="~/UI/Routine2.js?v=3"></script>
+
+    <script>
+        $('[data-toggle="tooltip"]').tooltip();
+    </script>
+
+    <script>
+        $('a[data-fancybox][data-type="iframe"], [data-fancybox][data-type="iframe"]>a').each(function () {
+            var $elem = $(this);
+            var $container = $elem.closest('[data-fancybox]');
+            var width = $container.attr('data-width');
+            var height = $container.attr('data-height');
+
+            var options = {
+                type: 'iframe',
+
+                width: '90%',
+                height: '80%',
+
+                autoSize: false,
+                fitToView: false,
+
+                iframe: {
+                    scrolling: true
+                },
+
+                helpers: {
+                    overlay: {
+                        locked: false
+                    }
+                }
+            };
+
+            if (width) options.maxWidth = width;
+            if (height) options.maxHeight = height;
+
+            // console.log(width, height);
+
+            $elem.fancybox(options);
+
+            $elem.on('click', function () {
+                $elem.closest('table').find('tr').removeClass('state--highlight');
+                $elem.closest('tr').addClass('state--highlight');
+            });
+        });
+
+        $('[data-fancybox][data-type="image"]').fancybox({
+            helpers: {
+                overlay: {
+                    locked: false
+                }
+            }
+        });
+    </script>
+
+    <script>
+        $('[data-role="select2"]').each(function () {
+            var $elem = $(this);
+            $elem.select2({
+                width: '100%',
+                placeholder: $elem.attr('placeholder') || "انتخاب نمایید...",
+                allowClear: true
+            });
+        });
+    </script>
+
+    <script src="~/UI/MutationObserver.js"></script>
+
+    <script>
+        $('form').on('submit', function (e) {
+            // e.preventDefault();
+
+            $('[data-contenteditablegroup]').each(function () {
+                var $content = $(this);
+                var groupName = $content.attr('data-contenteditablegroup');
+                var $textarea = $('[data-contenteditablegroup-textarea="' + groupName + '"]');
+
+                // console.log(groupName);
+
+                var body = $content.html();
+                $textarea.val(body);
+                // $textarea.show();
+            });
+        });
+    </script>
+
+
+    <script>
+        //correct arabic input to persian
+        (function () {
+            $("body").on("input", ":text", function (e) {
+                setTimeout(function () {
+                    var newString = $(e.target).val()
+                        .replace(/ي/g, 'ی')
+                        .replace(/ك/g, 'ک')
+                        .replace(/<script/g, '')
+                        ;
+
+                    $(e.target).val(newString);
+                }, 0);
+            });
+
+            // $("body").on("input", ":input", function (e) {
+            //     setTimeout(function () {
+            //         var newString = $(e.target).val()
+            //             .replace(/ي/g, 'ی')
+            //             .replace(/ك/g, 'ک')
+            //             .replace(/<script/g, '')
+            //             ;
+
+            //         $(e.target).val(newString);
+            //     }, 0);
+            // });
+        }());
+    </script>
+
+    <script src="~/UI/ShowHideControll.js"></script>
+
+    @RenderSection("Scripts", false)
+
+    <style>
+        .previewable__comment textarea {
+            display: block;
+            border-bottom: 1px dashed #dfe2e5;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+            height: 200px;
+            padding: 8px;
+            resize: none;
+            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        }
+
+        .previewable__comment .form-control:focus {
+            border-color: #2188ff !important;
+            outline: none;
+            box-shadow: inset 0 1px 2px rgba(27,31,35,0.075), 0 0 0 0.2em rgba(3,102,214,0.3) !important;
+        }
+
+            .previewable__comment .form-control:focus + .previewable__comment__statistic {
+                border-color: #2188ff !important;
+                outline: none;
+                box-shadow: inset 0 1px 2px rgba(27,31,35,0.075), 0px 2px 2px 1.8px #b3d1f3 !important;
+            }
+
+        .previewable__comment__statistic {
+            padding: 7px 10px;
+            margin: 0;
+            font-size: 13px;
+            line-height: 16px;
+            color: #586069;
+            background-color: #fafbfc;
+            border: 1px solid #c3c8cf;
+            border-top: 0;
+            border-bottom-right-radius: 4px;
+            border-bottom-left-radius: 4px;
+            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        }
+    </style>
+
+    <script>
+        $(function () {
+            function checkTextareaValidity(elem, id, minWord, maxWord, canSubmit) {
+                var wordCount = $(elem).val().trim().replace(/\n/g, ' ').split(' ').filter(function (word) {
+                    return word;
+                }).length;
+
+                // insert word count in dom
+                $('[data-word-control-info=' + id + ']').find('[data-word-counter]').text(wordCount);
+
+                // check validity
+                if (wordCount > maxWord) {
+                    $('[data-word-control-info=' + id + ']').find('[data-word-counter]').css('color', 'red');
+                    if (!canSubmit)
+                        elem.setCustomValidity('تعداد واژه‌ها از حد مجاز بیشتر است');
+                } else if (wordCount < minWord) {
+                    $('[data-word-control-info=' + id + ']').find('[data-word-counter]').css('color', 'red');
+                    if (!canSubmit)
+                        elem.setCustomValidity('تعداد واژه‌ها از حد مجاز کمتر است');
+                } else {
+                    $('[data-word-control-info=' + id + ']').find('[data-word-counter]').css('color', 'green');
+                    elem.setCustomValidity('');
+                }
+            }
+
+            $('[data-word-control]').each(function () {
+                // get attributes
+                var maxWord = Number($(this).data('max-word')) || Infinity;
+                var minWord = Number($(this).data('min-word')) || 0;
+                var canSubmit = $(this).data('can-submit');
+                var id = $(this).data('word-control');
+
+                var htmlItem = $('<div style="display: inline-block; margin: 5px 0 5px 10px; width: 200px;" />');
+
+                if (minWord || maxWord !== Infinity) {
+                    var wordCount = $(this).val().trim().replace(/\n/g, ' ').split(' ').filter(function (word) {
+                        return word;
+                    }).length;
+                    var wordCountHtml = htmlItem.clone().append('تعداد واژه‌ها: <span class="weight-500" data-word-counter>' + wordCount + '</span>');
+                    $('[data-word-control-info=' + id + ']').append(wordCountHtml);
+                }
+
+                if (maxWord !== Infinity) {
+                    var maxWordHtml = htmlItem.clone().addClass('pull-right text-right weight-500').append('حداکثر تعداد مجاز واژه: ' + maxWord);
+                    $('[data-word-control-info=' + id + ']').append(maxWordHtml);
+                }
+                if (minWord) {
+                    var minWordHtml = htmlItem.clone().addClass('pull-right text-right weight-500').append('حداقل تعداد مجاز واژه: ' + minWord);
+                    $('[data-word-control-info=' + id + ']').append(minWordHtml);
+                }
+
+                checkTextareaValidity(this, id, minWord, maxWord, canSubmit);
+
+                $(this).on('input', function () {
+                    checkTextareaValidity(this, id, minWord, maxWord, canSubmit);
+                });
+            });
+        });
+    </script>
+
+    <script>
+
+        $(".homer-side-toggler").on('click', function () {
+            var status = sessionStorage.getItem("menuCollapse");
+            if (status == 'collapse' || status == null) {
+                sessionStorage.setItem('menuCollapse', 'collapse-in');
+            } else if (status == 'collapse-in') {
+                sessionStorage.setItem('menuCollapse', 'collapse');
+            }
+            status = sessionStorage.getItem("menuCollapse");
+            console.log(status)
+        })
+
+        $('body').css('display', 'none');
+        $(function () {
+            var status = sessionStorage.getItem("menuCollapse");
+            console.log(status)
+            if (status == 'collapse-in') {
+                $("body").addClass('hide-sidebar');
+            }
+            $('body').css('display', 'block');
+        });
+
+    </script>
+
+    <script>
+        $('form[data-ajax]').on('submit', function (e) {
+            e.preventDefault();
+            var $this = $(this);
+            var data = $this.serialize() + '&isAjax=true';
+            var action = $this.attr('action');
+            var req = $.post(action, data);
+            var $button = $this.find('button[type=submit]');
+            $button.prop('disabled', true);
+            $button.append('<i class="fa fa-spinner fa-spin"/>');
+            req.then(function (res) {
+                showBeautyMessage(res);
+                $button.prop('disabled', false);
+                $button.find('i').remove();
+            });
+        });
+    </script>
+
+    <script>
+        $('form').one('submit', function (e) {
+            var $form = $(this);
+            setTimeout(function () {
+                $form.find(':submit').prop('disabled', true);
+            });
+        });
+    </script>
+
+    <script>
+        (function ($) {
+            $(window).on("load", function () {
+                $(".panel-scroll").mCustomScrollbar({
+                    axis: "y",
+                    theme: "dark"
+                });
+            });
+        })(jQuery);
+    </script>
+
+    <script>
+        $(function () {
+            var elements = document.getElementsByTagName("input");
+            for (var i = 0; i < elements.length; i++) {
+                elements[i].oninvalid = function (e) {
+                    e.target.setCustomValidity("");
+                    if (!e.target.validity.valid) {
+                        e.target.setCustomValidity("این فیلد نمی تواند خالی باشد ");
+                    }
+                };
+                elements[i].oninput = function (e) {
+                    e.target.setCustomValidity("");
+                };
+            }
+
+            var select = document.getElementsByTagName("select");
+            for (var i = 0; i < select.length; i++) {
+                select[i].oninvalid = function (e) {
+                    e.target.setCustomValidity("");
+                    if (!e.target.validity.valid) {
+                        e.target.setCustomValidity("لطفا آیتمی انتخاب کنید ");
+                    }
+                };
+                select[i].oninput = function (e) {
+                    e.target.setCustomValidity("");
+                };
+            }
+
+            var textarea = document.getElementsByTagName("textarea");
+            for (var i = 0; i < textarea.length; i++) {
+                textarea[i].oninvalid = function (e) {
+                    e.target.setCustomValidity("");
+                    if (!e.target.validity.valid) {
+                        e.target.setCustomValidity("این فیلد نمی تواند خالی باشد");
+                    }
+                };
+                textarea[i].oninput = function (e) {
+                    e.target.setCustomValidity("");
+                };
+            }
+        })
+    </script>
+
+    <link href="~/lib/multiselect/css/bootstrap-multiselect.css" rel="stylesheet" />
+    <script src="~/lib/multiselect/js/bootstrap-multiselect.js"></script>
+
+    @*@await Component.InvokeAsync("UserIsProfileCompleted")*@
+</body>
+
+</html>

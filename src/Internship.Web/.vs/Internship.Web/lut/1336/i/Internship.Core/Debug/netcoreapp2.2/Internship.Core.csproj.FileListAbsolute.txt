@@ -1,0 +1,11 @@
+D:\NewInternship\Internship.Web\.vs\Internship.Web\lut\0\i\Internship.Core\Debug\netcoreapp2.2\Internship.Core.csproj.CoreCompileInputs.cache
+D:\NewInternship\Internship.Web\.vs\Internship.Web\lut\0\i\Internship.Core\Debug\netcoreapp2.2\Internship.Core.AssemblyInfoInputs.cache
+D:\NewInternship\Internship.Web\.vs\Internship.Web\lut\0\i\Internship.Core\Debug\netcoreapp2.2\Internship.Core.AssemblyInfo.cs
+I:\02\NewInternship\Internship.Web\.vs\Internship.Web\lut\0\i\Internship.Core\Debug\netcoreapp2.2\Internship.Core.csprojAssemblyReference.cache
+I:\02\NewInternship\Internship.Web\.vs\Internship.Web\lut\0\i\Internship.Core\Debug\netcoreapp2.2\Internship.Core.csproj.CoreCompileInputs.cache
+I:\02\NewInternship\Internship.Web\.vs\Internship.Web\lut\0\i\Internship.Core\Debug\netcoreapp2.2\Internship.Core.AssemblyInfoInputs.cache
+I:\02\NewInternship\Internship.Web\.vs\Internship.Web\lut\0\i\Internship.Core\Debug\netcoreapp2.2\Internship.Core.AssemblyInfo.cs
+I:\02\NewInternship\Internship.Web\.vs\Internship.Web\lut\0\b\Internship.Core\Debug\netcoreapp2.2\Internship.Core.deps.json
+I:\02\NewInternship\Internship.Web\.vs\Internship.Web\lut\0\b\Internship.Core\Debug\netcoreapp2.2\Internship.Core.dll
+I:\02\NewInternship\Internship.Web\.vs\Internship.Web\lut\0\i\Internship.Core\Debug\netcoreapp2.2\Internship.Core.csproj.CopyComplete
+I:\02\NewInternship\Internship.Web\.vs\Internship.Web\lut\0\i\Internship.Core\Debug\netcoreapp2.2\Internship.Core.dll

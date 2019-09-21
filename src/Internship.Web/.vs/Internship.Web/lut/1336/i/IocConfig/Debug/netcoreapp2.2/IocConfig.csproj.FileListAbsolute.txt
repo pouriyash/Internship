@@ -1,0 +1,8 @@
+I:\02\NewInternship\Internship.Web\.vs\Internship.Web\lut\0\b\IocConfig\Debug\netcoreapp2.2\IocConfig.deps.json
+I:\02\NewInternship\Internship.Web\.vs\Internship.Web\lut\0\b\IocConfig\Debug\netcoreapp2.2\IocConfig.dll
+I:\02\NewInternship\Internship.Web\.vs\Internship.Web\lut\0\i\IocConfig\Debug\netcoreapp2.2\IocConfig.csprojAssemblyReference.cache
+I:\02\NewInternship\Internship.Web\.vs\Internship.Web\lut\0\i\IocConfig\Debug\netcoreapp2.2\IocConfig.csproj.CoreCompileInputs.cache
+I:\02\NewInternship\Internship.Web\.vs\Internship.Web\lut\0\i\IocConfig\Debug\netcoreapp2.2\IocConfig.AssemblyInfoInputs.cache
+I:\02\NewInternship\Internship.Web\.vs\Internship.Web\lut\0\i\IocConfig\Debug\netcoreapp2.2\IocConfig.AssemblyInfo.cs
+I:\02\NewInternship\Internship.Web\.vs\Internship.Web\lut\0\i\IocConfig\Debug\netcoreapp2.2\IocConfig.csproj.CopyComplete
+I:\02\NewInternship\Internship.Web\.vs\Internship.Web\lut\0\i\IocConfig\Debug\netcoreapp2.2\IocConfig.dll

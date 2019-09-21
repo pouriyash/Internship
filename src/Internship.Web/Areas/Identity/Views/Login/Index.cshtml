@@ -1,0 +1,114 @@
+﻿@using Internship.Core.DomainModels.SSOT
+@*@inject ContactInfo ContactInfo*@
+@*@inject AppSettingCore AppSettingCore*@
+@inject IOptions<ContactInfo> ContactInfo
+@model Internship.Core.DomainModels.ViewModel.Identity.LoginViewModel
+
+@{
+    ViewBag.Title = "ورود به سامانه";
+    Layout = "Layout/LoginPage";
+}
+
+<div class="row">
+    <div class="col-md-6 col-sm-6 hidden-xs image-block ">
+
+
+
+    </div>
+    <style>
+        .image-block {
+            min-height: 100vh !important;
+            height: 100%;
+        }
+    </style>
+
+    <div class="col-md-6 col-sm-6 form-block ">
+        <div class="text-center">
+            @if (string.IsNullOrWhiteSpace(ContactInfo.Value.LoginLogo))
+                {
+                    <div class="img-siteLogo" style="background-image: url('@ContactInfo.Value.Logo')"></div>
+                }
+                else
+                {
+                    <img class="img-responsive margin-bottom-10" src="@ContactInfo.Value.LoginLogo" alt="@ContactInfo.Value.SiteTitle" />
+                }
+
+
+
+                @if (!ContactInfo.Value.HideSiteTitleOnLogin)
+                {
+                    <h2 class="site-title">@ContactInfo.Value.SiteTitle</h2>
+                }
+
+            @*<img class="margin-bottom-10" width="50" height="50" src="" alt="" />*@
+        </div>
+        <div class="box-form text-right">
+            <h3 class="box-form-loginTitle">ورود به سامانه</h3>
+            <h4 class="box-form-title">@ContactInfo.Value.SiteSlogan</h4>
+                <h4 class="box-form-subtitle">@ContactInfo.Value.SiteDescription</h4>
+
+            <form asp-controller="Login"
+                  asp-action="Index"
+                  asp-route-returnurl="@ViewData["ReturnUrl"]"
+                  name="loginForm"
+                  id="loginForm"
+                  autocomplete="off">
+                <div class="login-block">
+                    <div class="input-group box-form-input">
+                        <span class="input-group-addon rounded-right"><i class="pe-7s-user size-30" style="color:#11c7c5"></i></span>
+                        <input type="text" class="form-control rounded-left" name="UserName" autocomplete="off" required placeholder="نام کاربری">
+                    </div>
+
+                    <div class="input-group box-form-input">
+                        <span class="input-group-addon rounded-right"><i class="pe-7s-lock size-30" style="color:#11c7c5"></i></span>
+                        <input type="password" class="form-control rounded-left" name="Password" autocomplete="off" required placeholder="رمز عبور">
+                    </div>
+
+                    <div class="checkbox">
+                        <ul class="list-inline">
+                            <li>
+                                <label asp-for="RememberMe">
+                                    <input asp-for="RememberMe" />
+                                    @Html.DisplayNameFor(m => m.RememberMe)
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12 margin-top-10">
+                            <button type="submit" class="btn btn-exir btn-block">ورود</button>
+                        </div>
+                    </div>
+
+
+                    <div class="row text-center margin-top-20">
+                        <div class="row login-link">
+                            <p>
+                                آیا حساب کاربری ندارید؟
+                                <a class="form-block-register"
+                                   asp-route-returnurl="@ViewData["ReturnUrl"]">ثبت نام</a>
+                            </p>
+                        </div>
+                        <div class="row login-link ">
+                            <p>آیا کلمه عبور خود را فراموش کرده اید؟ <a class="form-block-register" asp-action="Index" asp-controller="ForgotPassword">بازیابی کلمه عبور</a></p>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!--=== Sticky Footer ===-->
+        <div class="sticky-footer">
+            <a href="http://www.exirresearch.ir/" target="_blank"><img class="footer-logo" src="~/theme/assets/images/exir-logo.png" /></a>
+            <div class="copyright-space">
+                <div class="copyright-text">کلیه حقوق این سامانه متعلق به<strong> <a href="" target="_blank">اکسیر</a> </strong> است.</div>
+
+                <p class="copyright-link">طراحی و توسعه: <a href="http://www.exirresearch.ir/" target="_blank">فناوری دانش و پژوهش اکسیر</a></p>
+                @*<p class="copyright-version">V1.2.0 2017.06.07</p>*@
+            </div>
+        </div>
+        <!--=== End Sticky Footer ===-->
+    </div>
+</div>
+

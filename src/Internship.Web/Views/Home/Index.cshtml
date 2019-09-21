@@ -1,0 +1,21 @@
+﻿@using System.Collections.Generic
+@using Alamut.Data.Paging
+@using Internship.Core.DomainModels.SSOT
+@using Microsoft.AspNetCore.Mvc
+@using Microsoft.AspNetCore.Mvc.Rendering
+@using Internship.Core.DomainModels.DTO.Routine2
+@using Internship.Core.DomainModels.DTO.Test
+@using Internship.Core.DomainModels.ViewModel.Test
+@using Internship.Core.DomainModels.ViewModel.Routine2
+@*@inject FileConfig FileConfig*@
+
+@model Routine2PageModel<IPaginated<TestSummeryDTO>, TestSearchCriteriaViewModel, TestDashboard>
+
+@{
+    ViewBag.Description = "روال تستی";
+}
+
+
+@{ var count = 1; }
+
+

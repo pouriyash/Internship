@@ -1,0 +1,15 @@
+﻿@using Internship.Core.DomainModels.ViewModel.Routine2
+@using Internship.Core.Entity.Internship
+@using Internship.Web.Helpers
+@using Internship.Core.DomainModels.SSOT
+@model Routine2CustomAction<Test>
+@Html.Raw(Routine2Helper.RemoveButton(Model.Entity.Id, Routine2Actions.F1))
+
+
+
+<span @Html.Raw(FancyboxHelper.Button())>
+    <a asp-controller="Test" asp-action="Step101" asp-route-id="@Model.Entity.Id"  class="text-info exir--transparent-btn">
+        <i class="pe-7s-play largeicon" title="ارسال" data-toggle="tooltip"></i>
+    </a>
+</span>
+

@@ -1,0 +1,50 @@
+﻿@using Exir.Regate
+@using Exir.Remark
+@using Internship.Toolkit
+@{
+    ViewBag.Title = "تعیین زمان و اعضای جلسه";
+    ViewBag.Description = "تعیین زمان و اعضای جلسه";
+}
+
+@Html.Raw(Styles.MakeLayoutBlank())
+
+<div class="tab-content-flex">
+    <div class="hpanel">
+        <div class="panel-body panel-scroll">
+            <div class="col-md-12">
+                <div class="form-card">
+                    <form class="form-horizontal" asp-controller="test" asp-action="Step101Next">
+
+
+                        <input type="hidden" name="id" value="@ViewBag.Id" class="btn btn-success" />
+
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="form-element form-input">
+                                <textarea name="description" id="field-description" class="form-element-field" required placeholder="توضیحات" rows="3" cols="50"></textarea>
+                                <div class="form-element-bar"></div>
+                                <label class="form-element-label state--required" for="field-Address">توضیحات</label>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-success btn-block m-t-xs">ارسال</button>
+
+                    </form>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $(function () {
+        $('a[data-role="json"]').removeAttr('onclick');
+        $('a[data-role="json"]').on('click', function (event) {
+            event.preventDefault();
+            var ids = $('[name="InerviewUserIdsJson"]').val()
+            $(this).attr('href', $(this).attr('href').split('?')[0] + '?selectValue=' + ids)
+            return PopupCenter($(this).attr('href'), "ExirUserMultiSelect", 900, 700)
+        })
+    })
+</script>

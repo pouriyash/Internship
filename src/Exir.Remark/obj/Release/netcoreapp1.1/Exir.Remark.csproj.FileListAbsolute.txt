@@ -1,0 +1,9 @@
+E:\GitHub\ExirResearchco\Nahad\lib\Exir.Remark\bin\Release\netcoreapp1.1\Exir.Remark.deps.json
+E:\GitHub\ExirResearchco\Nahad\lib\Exir.Remark\bin\Release\netcoreapp1.1\Exir.Remark.dll
+E:\GitHub\ExirResearchco\Nahad\lib\Exir.Remark\bin\Release\netcoreapp1.1\Exir.Remark.pdb
+E:\GitHub\ExirResearchco\Nahad\lib\Exir.Remark\obj\Release\netcoreapp1.1\Exir.Remark.csprojAssemblyReference.cache
+E:\GitHub\ExirResearchco\Nahad\lib\Exir.Remark\obj\Release\netcoreapp1.1\Exir.Remark.csproj.CoreCompileInputs.cache
+E:\GitHub\ExirResearchco\Nahad\lib\Exir.Remark\obj\Release\netcoreapp1.1\Exir.Remark.AssemblyInfoInputs.cache
+E:\GitHub\ExirResearchco\Nahad\lib\Exir.Remark\obj\Release\netcoreapp1.1\Exir.Remark.AssemblyInfo.cs
+E:\GitHub\ExirResearchco\Nahad\lib\Exir.Remark\obj\Release\netcoreapp1.1\Exir.Remark.dll
+E:\GitHub\ExirResearchco\Nahad\lib\Exir.Remark\obj\Release\netcoreapp1.1\Exir.Remark.pdb

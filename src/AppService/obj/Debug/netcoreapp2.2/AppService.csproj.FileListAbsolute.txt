@@ -1,0 +1,16 @@
+D:\Repose\internship13980630\Internship\src\AppService\bin\Debug\netcoreapp2.2\AppService.deps.json
+D:\Repose\internship13980630\Internship\src\AppService\bin\Debug\netcoreapp2.2\AppService.dll
+D:\Repose\internship13980630\Internship\src\AppService\bin\Debug\netcoreapp2.2\AppService.pdb
+D:\Repose\internship13980630\Internship\src\AppService\bin\Debug\netcoreapp2.2\Alamut.Service.Messaging.dll
+D:\Repose\internship13980630\Internship\src\AppService\bin\Debug\netcoreapp2.2\Internship.Core.dll
+D:\Repose\internship13980630\Internship\src\AppService\bin\Debug\netcoreapp2.2\Internship.Infrastructure.dll
+D:\Repose\internship13980630\Internship\src\AppService\bin\Debug\netcoreapp2.2\Internship.Core.pdb
+D:\Repose\internship13980630\Internship\src\AppService\bin\Debug\netcoreapp2.2\Internship.Infrastructure.pdb
+D:\Repose\internship13980630\Internship\src\AppService\bin\Debug\netcoreapp2.2\Alamut.Service.Messaging.pdb
+D:\Repose\internship13980630\Internship\src\AppService\obj\Debug\netcoreapp2.2\AppService.csprojAssemblyReference.cache
+D:\Repose\internship13980630\Internship\src\AppService\obj\Debug\netcoreapp2.2\AppService.csproj.CoreCompileInputs.cache
+D:\Repose\internship13980630\Internship\src\AppService\obj\Debug\netcoreapp2.2\AppService.AssemblyInfoInputs.cache
+D:\Repose\internship13980630\Internship\src\AppService\obj\Debug\netcoreapp2.2\AppService.AssemblyInfo.cs
+D:\Repose\internship13980630\Internship\src\AppService\obj\Debug\netcoreapp2.2\AppService.csproj.CopyComplete
+D:\Repose\internship13980630\Internship\src\AppService\obj\Debug\netcoreapp2.2\AppService.dll
+D:\Repose\internship13980630\Internship\src\AppService\obj\Debug\netcoreapp2.2\AppService.pdb

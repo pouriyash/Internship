@@ -1,0 +1,166 @@
+﻿@using System.Collections.Generic
+@using Research.City.Admin.Toolkit
+@using Microsoft.AspNetCore.Mvc
+@using Microsoft.AspNetCore.Mvc.Rendering
+@using Internship.Core.DomainModels.DTO.Routine2
+@using Internship.Core.DomainModels.SSOT
+@using Internship.Core.DomainModels.ViewModel.Test
+@using Internship.Core.DomainModels.DTO.Test
+@using Internship.Core.DomainModels.ViewModel.Routine2
+@using Exir.Remark
+ 
+
+@model Routine2PageModel<List<TestSummeryDTO>, TestSearchCriteriaViewModel, TestDashboard>
+
+
+@{
+    ViewBag.Title = $"کارتابل ۱";
+    ViewBag.Description = "روال تستی";
+}
+
+@{
+    ViewBag.BreadCrumb = new BreadCrumb
+    {
+        Links = new List<BreadCrumbLink>
+{
+new BreadCrumbLink
+{
+Title = "روال تستی",
+Link = Url.Action("Index", "Test")
+},
+
+new BreadCrumbLink
+{
+Title = ViewBag.Title
+},
+}
+    };
+}
+
+@{ var count = 1; }
+
+<ul class="nav tab-nav">
+
+    <li class="tab-nav-item" data-dashboardtype="@DashboardTypes.Draft">
+        <a asp-controller="Test" asp-action="Manage"
+           asp-route-CurrentDashboard="@Model.CurrentDashboard"
+           asp-route-DashboardType="@DashboardTypes.Draft">پیش‌نویس</a>
+    </li>
+
+    <li class="tab-nav-item" data-dashboardtype="@DashboardTypes.New">
+        <a asp-controller="Test" asp-action="Manage"
+           asp-route-CurrentDashboard="@Model.CurrentDashboard"
+           asp-route-DashboardType="@DashboardTypes.New">تازه‌ها</a>
+    </li>
+
+    <li class="tab-nav-item" data-dashboardtype="@DashboardTypes.Archived">
+        <a asp-controller="Test" asp-action="Manage"
+           asp-route-CurrentDashboard="@Model.CurrentDashboard"
+           asp-route-DashboardType="@DashboardTypes.Archived">ارسال شده‌ها</a>
+    </li>
+
+
+    <li class="tab-nav-item" data-dashboardtype="@DashboardTypes.Done">
+        <a asp-controller="Test" asp-action="Manage"
+           asp-route-CurrentDashboard="@Model.CurrentDashboard"
+           asp-route-DashboardType="@DashboardTypes.Done">خاتمه‌یافته‌ها</a>
+    </li>
+
+
+</ul>
+
+<script>
+    $('[data-dashboardtype="@Model.SearchCriteria.DashboardType"]').addClass('selected');
+</script>
+
+
+
+<div class="hpanel _hgreen hpanel--fullheight">
+    @*<div class="size-15 panel-heading">تازه‌ها</div>*@
+    <div class="panel-body">
+
+        @if (Model.PageModel != null && Model.PageModel.Any())
+        {
+            <div class="table-responsive">
+                <table class="table table-striped table-hover table-valigned" data-role="Routine2ManageTable" data-routine-id="@TestRoutine.RoutineId">
+                    <thead>
+                        <tr>
+                            @if (Model.SearchCriteria.DashboardType == DashboardTypes.Done)
+                            {
+                                <th width="1"></th>
+                            }
+                            <th width="1">#</th>
+                            <th width="100">تاریخ ارسال</th>
+
+                            <th>عنوان</th>
+
+                            @if (Model.SearchCriteria.DashboardType != DashboardTypes.Draft)
+                            {
+                                <th width="150">وضعیت فعلی</th>
+                            }
+
+                            <th width="1">اقدامات</th>
+                            <environment names="Development">
+                                <th width="1">STEP</th>
+                            </environment>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.PageModel)
+                        {
+                            <tr data-role="record" data-record-id="@item.Id" data-record-routinestep="@item.RoutineStep">
+
+                                <td>@Html.Raw(RemarkPersianNumber.Build(count++))</td>
+                                <td>@Html.Raw(RemarkPersianDate.Build(item.RoutineStepChangeDate))</td>
+                                <td>@item.Title</td>
+                                @if (Model.SearchCriteria.DashboardType != DashboardTypes.Draft)
+                                {
+                                    <td>@Html.Raw(RemarkRoutine2Step.Build(item.RoutineStep, TestRoutine.RoutineId))</td>
+                                }
+                            <td style="white-space: nowrap;">
+                                @if (Model.CurrentDashboard == TestDashboard.Applicant)
+                                {
+                                    if (item.RoutineStep == TestRoutine.FirstStep)
+                                    {
+                                        <a asp-controller="Test" asp-action="EditBasic" asp-route-id="@item.Id">
+                                            <i class="pe-7s-file largeicon" title="ویرایش" data-toggle="tooltip"></i>
+                                        </a>
+                                    }
+                                }
+
+
+                                @if (item.RoutineIsFlown)
+                                {
+
+                                    @Html.Partial("_Routine2/_LogButton", new Routine2LogButton(TestRoutine.RoutineId, item.Id))
+
+
+                                    <a data-fancybox data-type="iframe" asp-controller="Test" asp-action="Detail" asp-route-id="@item.Id">
+                                        <i class="pe-7s-info largeicon" title="مشاهده جزییات" data-toggle="tooltip"></i>
+                                    </a>
+                                }
+
+
+                                @if (Model.SearchCriteria.DashboardType == DashboardTypes.New)
+                                {
+                                    @Html.Partial("_Routine2/_DefaultActions", item.Id)
+                                    @*@Html.Partial("_Routine2/_CustomAction", new Routine2CustomAction<Test>(item, 101))*@
+
+
+                                }
+                            </td>
+                                <environment names="Development">
+                                    <td>@item.RoutineStep</td>
+                                </environment>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        }
+    </div>
+</div>
+
+
+

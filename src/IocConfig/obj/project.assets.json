@@ -12619,11 +12619,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Repose\\internship13980630\\Internship\\src\\IocConfig\\IocConfig.csproj",
+      "projectUniqueName": "D:\\GitHub\\exir\\Internship\\src\\IocConfig\\IocConfig.csproj",
       "projectName": "IocConfig",
-      "projectPath": "D:\\Repose\\internship13980630\\Internship\\src\\IocConfig\\IocConfig.csproj",
+      "projectPath": "D:\\GitHub\\exir\\Internship\\src\\IocConfig\\IocConfig.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "D:\\Repose\\internship13980630\\Internship\\src\\IocConfig\\obj\\",
+      "outputPath": "D:\\GitHub\\exir\\Internship\\src\\IocConfig\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -12642,11 +12642,11 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "D:\\Repose\\internship13980630\\Internship\\src\\Internship.Core\\Internship.Core.csproj": {
-              "projectPath": "D:\\Repose\\internship13980630\\Internship\\src\\Internship.Core\\Internship.Core.csproj"
+            "D:\\GitHub\\exir\\Internship\\src\\Internship.Core\\Internship.Core.csproj": {
+              "projectPath": "D:\\GitHub\\exir\\Internship\\src\\Internship.Core\\Internship.Core.csproj"
             },
-            "D:\\Repose\\internship13980630\\Internship\\src\\Internship.Infrastructure\\Internship.Infrastructure.csproj": {
-              "projectPath": "D:\\Repose\\internship13980630\\Internship\\src\\Internship.Infrastructure\\Internship.Infrastructure.csproj"
+            "D:\\GitHub\\exir\\Internship\\src\\Internship.Infrastructure\\Internship.Infrastructure.csproj": {
+              "projectPath": "D:\\GitHub\\exir\\Internship\\src\\Internship.Infrastructure\\Internship.Infrastructure.csproj"
             }
           }
         }

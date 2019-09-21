@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Repose\\internship13980630\\Internship\\src\\Internship.Core\\Internship.Core.csproj": {}
+    "D:\\GitHub\\exir\\Internship\\src\\Internship.Core\\Internship.Core.csproj": {}
   },
   "projects": {
-    "D:\\Repose\\internship13980630\\Internship\\src\\Internship.Core\\Internship.Core.csproj": {
+    "D:\\GitHub\\exir\\Internship\\src\\Internship.Core\\Internship.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Repose\\internship13980630\\Internship\\src\\Internship.Core\\Internship.Core.csproj",
+        "projectUniqueName": "D:\\GitHub\\exir\\Internship\\src\\Internship.Core\\Internship.Core.csproj",
         "projectName": "Internship.Core",
-        "projectPath": "D:\\Repose\\internship13980630\\Internship\\src\\Internship.Core\\Internship.Core.csproj",
+        "projectPath": "D:\\GitHub\\exir\\Internship\\src\\Internship.Core\\Internship.Core.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\Repose\\internship13980630\\Internship\\src\\Internship.Core\\obj\\",
+        "outputPath": "D:\\GitHub\\exir\\Internship\\src\\Internship.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

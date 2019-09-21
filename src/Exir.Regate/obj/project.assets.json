@@ -8796,11 +8796,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Repose\\internship13980630\\Internship\\src\\Exir.Regate\\Exir.Regate.csproj",
+      "projectUniqueName": "D:\\GitHub\\exir\\Internship\\src\\Exir.Regate\\Exir.Regate.csproj",
       "projectName": "Exir.Regate",
-      "projectPath": "D:\\Repose\\internship13980630\\Internship\\src\\Exir.Regate\\Exir.Regate.csproj",
+      "projectPath": "D:\\GitHub\\exir\\Internship\\src\\Exir.Regate\\Exir.Regate.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "D:\\Repose\\internship13980630\\Internship\\src\\Exir.Regate\\obj\\",
+      "outputPath": "D:\\GitHub\\exir\\Internship\\src\\Exir.Regate\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -8817,8 +8817,8 @@
       "frameworks": {
         "netcoreapp1.1": {
           "projectReferences": {
-            "D:\\Repose\\internship13980630\\Internship\\src\\Exir.Remark\\Exir.Remark.csproj": {
-              "projectPath": "D:\\Repose\\internship13980630\\Internship\\src\\Exir.Remark\\Exir.Remark.csproj"
+            "D:\\GitHub\\exir\\Internship\\src\\Exir.Remark\\Exir.Remark.csproj": {
+              "projectPath": "D:\\GitHub\\exir\\Internship\\src\\Exir.Remark\\Exir.Remark.csproj"
             }
           }
         }

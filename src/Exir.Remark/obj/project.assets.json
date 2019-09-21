@@ -8774,11 +8774,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Repose\\internship13980630\\Internship\\src\\Exir.Remark\\Exir.Remark.csproj",
+      "projectUniqueName": "D:\\GitHub\\exir\\Internship\\src\\Exir.Remark\\Exir.Remark.csproj",
       "projectName": "Exir.Remark",
-      "projectPath": "D:\\Repose\\internship13980630\\Internship\\src\\Exir.Remark\\Exir.Remark.csproj",
+      "projectPath": "D:\\GitHub\\exir\\Internship\\src\\Exir.Remark\\Exir.Remark.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "D:\\Repose\\internship13980630\\Internship\\src\\Exir.Remark\\obj\\",
+      "outputPath": "D:\\GitHub\\exir\\Internship\\src\\Exir.Remark\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",

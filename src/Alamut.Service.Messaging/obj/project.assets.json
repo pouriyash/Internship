@@ -6162,11 +6162,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Repose\\internship13980630\\Internship\\src\\Alamut.Service.Messaging\\Alamut.Service.Messaging.csproj",
+      "projectUniqueName": "D:\\GitHub\\exir\\Internship\\src\\Alamut.Service.Messaging\\Alamut.Service.Messaging.csproj",
       "projectName": "Alamut.Service.Messaging",
-      "projectPath": "D:\\Repose\\internship13980630\\Internship\\src\\Alamut.Service.Messaging\\Alamut.Service.Messaging.csproj",
+      "projectPath": "D:\\GitHub\\exir\\Internship\\src\\Alamut.Service.Messaging\\Alamut.Service.Messaging.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "D:\\Repose\\internship13980630\\Internship\\src\\Alamut.Service.Messaging\\obj\\",
+      "outputPath": "D:\\GitHub\\exir\\Internship\\src\\Alamut.Service.Messaging\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

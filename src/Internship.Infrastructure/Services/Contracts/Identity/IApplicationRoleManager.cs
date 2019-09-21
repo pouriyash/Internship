@@ -13,6 +13,7 @@ namespace Internship.Infrastructure.Services.Contracts.Identity
 {
     public interface IApplicationRoleManager : IDisposable
     {
+
         #region BaseClass
 
         /// <summary>
